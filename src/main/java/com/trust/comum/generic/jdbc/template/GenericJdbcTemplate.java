@@ -1,4 +1,62 @@
-package com.trust.generic.jdbc.template;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.trust.comum.generic.jdbc.template;
 
 import static com.opengamma.elsql.ElSqlConfig.SQL_SERVER_2008;
 
