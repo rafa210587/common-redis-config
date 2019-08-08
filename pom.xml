@@ -8,8 +8,8 @@
 		<artifactId>core-parent</artifactId>
 		<version>1.0.9</version>
 	</parent>
-	<groupId>com.trust.comum-generic-jdbc</groupId>
-	<artifactId>genericjdbctemplate</artifactId>
+	<groupId>comum.generic.jdbc</groupId>
+	<artifactId>comum-generic-jdbc-template</artifactId>
 	<version>1.0.0</version>
 	<name>Generic JDBC Template</name>
 	<description>lib for using Generic JDBC Template</description>
@@ -25,148 +25,7 @@
 		<tag>v0.0.2</tag>
 	</scm>
 
-<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.srmasset</groupId>
-				<artifactId>core-parent</artifactId>
-				<version>1.0.9</version>
-				<exclusions>
-					<exclusion>
-						<groupId>comum.json</groupId>
-						<artifactId>comum-json</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-starter-jdbc</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.servlet</groupId>
-						<artifactId>javax.servlet-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.microsoft.sqlserver</groupId>
-						<artifactId>sqljdbc4</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.cloud</groupId>
-						<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-starter-actuator</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-starter-data-mongodb</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.opengamma</groupId>
-						<artifactId>elsql</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.commons</groupId>
-						<artifactId>commons-math3</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>commons-codec</groupId>
-						<artifactId>commons-codec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.commons</groupId>
-						<artifactId>commons-lang3</artifactId>
-					</exclusion>
 
-					<exclusion>
-						<groupId>commons-net</groupId>
-						<artifactId>commons-net</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.lowagie</groupId>
-						<artifactId>itext</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.cloud</groupId>
-						<artifactId>spring-cloud-dependencies</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.commons</groupId>
-						<artifactId>commons-email</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.exception</groupId>
-						<artifactId>comum-exception</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.jdbc</groupId>
-						<artifactId>comum-jdbc</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.utils</groupId>
-						<artifactId>comum-utils</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.testng</groupId>
-						<artifactId>testng</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-starter-test</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>io.springfox</groupId>
-						<artifactId>springfox-swagger2</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>io.springfox</groupId>
-						<artifactId>springfox-swagger-ui</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.cloud</groupId>
-						<artifactId>spring-cloud-starter-zipkin</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.springframework.cloud</groupId>
-						<artifactId>spring-cloud-starter-sleuth</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.criptografia.pgp</groupId>
-						<artifactId>comum-criptografia-pgp</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.sftp</groupId>
-						<artifactId>comum-sftp</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>commons-io</groupId>
-						<artifactId>commons-io</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.workflow</groupId>
-						<artifactId>comum-workflow</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.validador.nfe</groupId>
-						<artifactId>comum-validador-nfe</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.validador.nfe</groupId>
-						<artifactId>comum-validador-nfe</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.thoughtworks.xstream</groupId>
-						<artifactId>xstream</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>comum.componentes</groupId>
-						<artifactId>comum-componentes</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	
 	<build>
 		<plugins>
 			<plugin>
