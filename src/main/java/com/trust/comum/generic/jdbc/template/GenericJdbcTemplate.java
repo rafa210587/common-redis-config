@@ -1,61 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package com.trust.comum.generic.jdbc.template;
 
 import static com.opengamma.elsql.ElSqlConfig.SQL_SERVER_2008;
@@ -96,20 +38,22 @@ import com.opengamma.elsql.ElSqlBundle;
 import com.opengamma.elsql.ElSqlConfig;
 
 /**
- * Template class with a basic set of JDBC operations, allowing the use
- * of named parameters rather than traditional '?' placeholders.
+ * Template class with a basic set of JDBC operations, allowing the use of named
+ * parameters rather than traditional '?' placeholders.
  *
  * <p>
  * This class delegates to a wrapped {@link #getJdbcOperations() JdbcTemplate}
  * once the substitution from named parameters to JDBC style '?' placeholders is
- * done at execution time. It also allows for expanding a {@link List}
- * of values to the appropriate number of placeholders.
+ * done at execution time. It also allows for expanding a {@link List} of values
+ * to the appropriate number of placeholders.
  *
- * <p>The underlying {@link org.springframework.jdbc.core.JdbcTemplate} is
- * exposed to allow for convenient access to the traditional
+ * <p>
+ * The underlying {@link org.springframework.jdbc.core.JdbcTemplate} is exposed
+ * to allow for convenient access to the traditional
  * {@link org.springframework.jdbc.core.JdbcTemplate} methods.
  *
- * <p><b>NOTE: An instance of this class is thread-safe once configured.</b>
+ * <p>
+ * <b>NOTE: An instance of this class is thread-safe once configured.</b>
  *
  * @author isaac.silva
  * @see org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations
@@ -139,7 +83,8 @@ public class GenericJdbcTemplate extends NamedParameterJdbcTemplate {
 	}
 
 	@Nullable
-	public <T> T executeForSQLName(String sqlName, SqlParameterSource paramSource, PreparedStatementCallback<T> action) {
+	public <T> T executeForSQLName(String sqlName, SqlParameterSource paramSource,
+			PreparedStatementCallback<T> action) {
 		String query = getSqlByName(sqlName);
 		return getJdbcOperations().execute(getPreparedStatementCreator(query, paramSource), action);
 	}
@@ -270,7 +215,8 @@ public class GenericJdbcTemplate extends NamedParameterJdbcTemplate {
 
 	public SqlRowSet queryForRowSetForSQLName(String sqlName, SqlParameterSource paramSource) {
 		String query = getSqlByName(sqlName);
-		SqlRowSet result = getJdbcOperations().query(getPreparedStatementCreator(query, paramSource), new SqlRowSetResultSetExtractor());
+		SqlRowSet result = getJdbcOperations().query(getPreparedStatementCreator(query, paramSource),
+				new SqlRowSetResultSetExtractor());
 		Assert.state(result != null, "No result");
 		return result;
 	}
@@ -295,7 +241,8 @@ public class GenericJdbcTemplate extends NamedParameterJdbcTemplate {
 		return update(query, paramSource, generatedKeyHolder, null);
 	}
 
-	public int updateForSQLName(String sqlName, SqlParameterSource paramSource, KeyHolder generatedKeyHolder, @Nullable String[] keyColumnNames) {
+	public int updateForSQLName(String sqlName, SqlParameterSource paramSource, KeyHolder generatedKeyHolder,
+			@Nullable String[] keyColumnNames) {
 		String query = getSqlByName(sqlName);
 		PreparedStatementCreator psc = getPreparedStatementCreator(query, paramSource, pscf -> {
 			if (keyColumnNames != null) {
@@ -314,39 +261,52 @@ public class GenericJdbcTemplate extends NamedParameterJdbcTemplate {
 
 	public int[] batchUpdateForSQLName(String sqlName, SqlParameterSource[] batchArgs) {
 		String query = getSqlByName(sqlName);
-		return NamedParameterBatchUpdateUtils.executeBatchUpdateWithNamedParameters(getParsedSql(query), batchArgs, getJdbcOperations());
+		return NamedParameterBatchUpdateUtils.executeBatchUpdateWithNamedParameters(getParsedSql(query), batchArgs,
+				getJdbcOperations());
 	}
 
 	/**
-	 * Build a {@link PreparedStatementCreator} based on the given SQL and named parameters.
-	 * <p>Note: Directly called from all {@code query} variants. Delegates to the common
-	 * {@link #getPreparedStatementCreator(String, SqlParameterSource, Consumer)} method.
-	 * @param sqlName the SQL Name statement to execute
+	 * Build a {@link PreparedStatementCreator} based on the given SQL and named
+	 * parameters.
+	 * <p>
+	 * Note: Directly called from all {@code query} variants. Delegates to the
+	 * common
+	 * {@link #getPreparedStatementCreator(String, SqlParameterSource, Consumer)}
+	 * method.
+	 * 
+	 * @param sqlName     the SQL Name statement to execute
 	 * @param paramSource container of arguments to bind
 	 * @return the corresponding {@link PreparedStatementCreator}
 	 * @see #getPreparedStatementCreator(String, SqlParameterSource, Consumer)
 	 */
-	protected PreparedStatementCreator getPreparedStatementCreatorForSQLName(String sqlName, SqlParameterSource paramSource) {
+	protected PreparedStatementCreator getPreparedStatementCreatorForSQLName(String sqlName,
+			SqlParameterSource paramSource) {
 		String query = getSqlByName(sqlName);
 		return getPreparedStatementCreator(query, paramSource, null);
 	}
 
 	/**
-	 * Build a {@link PreparedStatementCreator} based on the given SQL and named parameters.
-	 * <p>Note: Used for the {@code update} variant with generated key handling, and also
-	 * delegated from {@link #getPreparedStatementCreator(String, SqlParameterSource)}.
-	 * @param sqlName the SQL Name statement to execute
+	 * Build a {@link PreparedStatementCreator} based on the given SQL and named
+	 * parameters.
+	 * <p>
+	 * Note: Used for the {@code update} variant with generated key handling, and
+	 * also delegated from
+	 * {@link #getPreparedStatementCreator(String, SqlParameterSource)}.
+	 * 
+	 * @param sqlName     the SQL Name statement to execute
 	 * @param paramSource container of arguments to bind
-	 * @param customizer callback for setting further properties on the
-	 * {@link PreparedStatementCreatorFactory} in use), applied before the
-	 * actual {@code newPreparedStatementCreator} call
+	 * @param customizer  callback for setting further properties on the
+	 *                    {@link PreparedStatementCreatorFactory} in use), applied
+	 *                    before the actual {@code newPreparedStatementCreator} call
 	 * @return the corresponding {@link PreparedStatementCreator}
 	 * @since 5.0.5
 	 * @see #getParsedSql(String)
-	 * @see PreparedStatementCreatorFactory#PreparedStatementCreatorFactory(String, List)
+	 * @see PreparedStatementCreatorFactory#PreparedStatementCreatorFactory(String,
+	 *      List)
 	 * @see PreparedStatementCreatorFactory#newPreparedStatementCreator(Object[])
 	 */
-	protected PreparedStatementCreator getPreparedStatementCreatorForSQLName(String sqlName, SqlParameterSource paramSource, @Nullable Consumer<PreparedStatementCreatorFactory> customizer) {
+	protected PreparedStatementCreator getPreparedStatementCreatorForSQLName(String sqlName,
+			SqlParameterSource paramSource, @Nullable Consumer<PreparedStatementCreatorFactory> customizer) {
 		String query = getSqlByName(sqlName);
 		ParsedSql parsedSql = getParsedSql(query);
 		String sqlToUse = NamedParameterUtils.substituteNamedParameters(parsedSql, paramSource);
