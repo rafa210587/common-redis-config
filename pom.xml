@@ -3,38 +3,34 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.2.RELEASE</version>
-		<relativePath />
-	</parent>
-	<groupId>comum.generic.jdbc</groupId>
-	<artifactId>comum-generic-jdbc-template</artifactId>
+
+	<groupId>comum.datasource.config</groupId>
+	<artifactId>comum-datasource-config</artifactId>
 	<version>1.0.0</version>
-	<name>Generic JDBC Template</name>
-	<description>lib for using Generic JDBC Template</description>
+	<name>DataSource Config</name>
+	<description>lib for DataSource Config</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/generic-jdbc-template.git</connection>
-		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/generic-jdbc-template.git</developerConnection>
-		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/generic-jdbc-template.git</url>
+		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</connection>
+		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</developerConnection>
+		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</url>
 		<tag>v0.0.2</tag>
 	</scm>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<groupId>comum.jdbc</groupId>
+			<artifactId>comum-jdbc</artifactId>
+			<version>1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>com.opengamma</groupId>
-			<artifactId>elsql</artifactId>
-			<version>0.9.SRM</version>
+			<groupId>comum.generic.jdbc</groupId>
+			<artifactId>comum-generic-jdbc-template</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 

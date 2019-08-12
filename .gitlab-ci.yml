@@ -1,4 +1,19 @@
- include:
-  - project: 'COMUM/repo-default'
-    ref: com-maven-release 
-    file: '.gitlab-ci.yml'
+stages:
+  - maven
+
+cache:
+  untracked: true
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .m2 
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2"
+
+maven-install:
+  image: $CI_REGISTRY/comum/imagens_padrao/master-sonar-maven:latest
+  stage: maven
+  script:
+  - mvn -B clean deploy 
+  tags:
+    - cache
