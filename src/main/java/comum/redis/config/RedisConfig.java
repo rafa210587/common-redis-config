@@ -17,7 +17,6 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 @EnableCaching
 @Configuration
 @ComponentScan
-@Primary
 public class RedisConfig {
 
 	@Value("${redis.host}")
