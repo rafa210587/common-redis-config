@@ -3,34 +3,43 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>comum.datasource.config</groupId>
-	<artifactId>comum-datasource-config</artifactId>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath />
+	</parent>
+	<groupId>comum.mongodb.config</groupId>
+	<artifactId>comum-mongodb-config</artifactId>
 	<version>1.0.0</version>
-	<name>DataSource Config</name>
-	<description>lib for DataSource Config</description>
+	<name>MongoDB Config</name>
+	<description>lib for MongoDB Config</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</connection>
-		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</developerConnection>
-		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-datasource-config.git</url>
+		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</connection>
+		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</developerConnection>
+		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</url>
 		<tag>v0.0.2</tag>
 	</scm>
 
 	<dependencies>
 		<dependency>
-			<groupId>comum.jdbc</groupId>
-			<artifactId>comum-jdbc</artifactId>
-			<version>1.4</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<!-- UTILITY -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>comum.generic.jdbc</groupId>
-			<artifactId>comum-generic-jdbc-template</artifactId>
-			<version>1.0.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
