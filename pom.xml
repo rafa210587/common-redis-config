@@ -9,37 +9,28 @@
 		<version>2.0.3.RELEASE</version>
 		<relativePath />
 	</parent>
-	<groupId>comum.mongodb.config</groupId>
-	<artifactId>comum-mongodb-config</artifactId>
+	<groupId>comum.redis.config</groupId>
+	<artifactId>comum-redis-config</artifactId>
 	<version>1.0.0</version>
-	<name>MongoDB Config</name>
-	<description>lib for MongoDB Config</description>
+	<name>Redis Config</name>
+	<description>lib for Redis Config</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</connection>
-		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</developerConnection>
-		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</url>
+		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-redis-config.git</connection>
+		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-redis-config.git</developerConnection>
+		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-redis-config.git</url>
 		<tag>v0.0.2</tag>
 	</scm>
 
 	<dependencies>
+		<!-- CACHE -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<!-- UTILITY -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 	</dependencies>
 
