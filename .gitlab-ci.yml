@@ -1,4 +1,4 @@
 include:
   - project: 'COMUM/repo-default'
-    ref: com-maven-release 
+    ref: build-libs 
     file: '.gitlab-ci.yml'
