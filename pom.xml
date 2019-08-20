@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>comum.redis.config</groupId>
 	<artifactId>comum-redis-config</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>Redis Config</name>
 	<description>lib for Redis Config</description>
 
@@ -22,7 +22,7 @@
 		<connection>scm:git:git@gitlab.interno.srmasset.com:COMUM/reference/comum-redis-config.git</connection>
 		<developerConnection>scm:git:git@gitlab.interno.srmasset.com:COMUM/reference/comum-redis-config.git</developerConnection>
 		<url>git@gitlab.interno.srmasset.com:COMUM/reference/comum-redis-config.git</url>
-		<tag>v1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 
